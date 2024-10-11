@@ -13,6 +13,7 @@ console.log(connection);
 // connect to the database
 mongoose.connect(connection);
 
+app.use(cors());
 // Importing the routes
 var messageRouter = require('./routes/api/v1/messages');
 
@@ -22,7 +23,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
