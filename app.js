@@ -1,3 +1,4 @@
+var app = express();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -17,7 +18,6 @@ app.use(cors());
 // Importing the routes
 var messageRouter = require('./routes/api/v1/messages');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
