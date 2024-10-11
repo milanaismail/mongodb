@@ -3,10 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const config = require('config');
 // mongoose
 var mongoose = require('mongoose');
+const connection = config.get('mongodb')
+console.log(connection);
 // connect to the database
-mongoose.connect('mongodb+srv://milanais:LhrrBqyHJaPsK9zq@cluster0.tyxf9.mongodb.net/');
+mongoose.connect(connection);
 
 // Importing the routes
 var messageRouter = require('./routes/api/v1/messages');
